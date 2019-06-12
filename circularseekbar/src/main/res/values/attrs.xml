@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircularSeekBar">
+        <attr name="cs_step" format="float" />
+        <attr name="cs_progressWidth" format="dimension" />
+        <attr name="cs_arcWidth" format="dimension" />
+        <attr name="cs_indicatorRadius" format="dimension" />
+        <attr name="cs_arcRadius" format="dimension" />
+        <attr name="cs_enabled" format="boolean" />
+        <attr name="cs_color_list" format="reference" />
+        <attr name="cs_text" format="string" />
+        <attr name="cs_text_size" format="dimension" />
+        <attr name="cs_text_color" format="color" />
+        <attr name="cs_dynamic_text_color" format="boolean" />
+        <attr name="cs_text_progress" format="boolean" />
+    </declare-styleable>
+
+</resources>
