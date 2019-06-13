@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         app:cs_arcRadius="150dp"
         app:cs_color_list="@array/color_list"
+        app:cs_dynamic_text_color="true"
         app:cs_indicator_enabled="false"
+        app:cs_progress="84.7"
         app:cs_text="Text"
         app:cs_text_progress="true"
-        app:cs_dynamic_text_color="true"
-        app:cs_progress="84.7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

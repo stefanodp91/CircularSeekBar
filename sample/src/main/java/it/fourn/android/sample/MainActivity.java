@@ -1,7 +1,7 @@
 package it.fourn.android.sample;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
 import it.fourn.android.circularseekbar.CircularSeekBar;
