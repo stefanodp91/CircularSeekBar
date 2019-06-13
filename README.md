@@ -17,6 +17,19 @@ A framework used to create circular seek bar
 
 ` implementation 'it.fourn.android:circularseekbar:0.1'`
 
+#### build.gradle
+
+``` groovy
+allprojects {
+    repositories {
+        ...
+        maven {
+            url 'https://dl.bintray.com/stefanodp91/maven/'
+        }
+    }
+}
+```
+
 #### Maven
 ```
 <dependency>
@@ -95,6 +108,18 @@ seekBar.setOnRoundedSeekChangeListener(new OnCircularSeekBarChangeListener() {
 *  `app:cs_text_color`          : Text static color
 *  `app:cs_dynamic_text_color`  : Text color changes according to the indicator color
 *  `app:cs_text_progress`       : Display the current progress as text
+
+---
+
+## Common issues
+
+`java.lang.IllegalArgumentException: y must be >= 0` 
+
+or
+
+`java.lang.IllegalArgumentException: x must be < bitmap.width()`
+
+Probably the  **cs_arcRadius** is too large 
 
 
 ---
