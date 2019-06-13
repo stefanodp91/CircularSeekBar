@@ -1,7 +1,5 @@
 # CircularSeekBar 
 
-## Overview
-
 A framework used to create circular seek bar
 
 ---
