@@ -6,7 +6,9 @@ A framework used to create circular seek bar
 
 ## Screenshots
 
-![Trestle](https://raw.githubusercontent.com/lawloretienne/Trestle/master/images/Trestle_Screenshot_3.png)
+<img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen1.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen2.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen3.png" width="250">
+
+<img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen4.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen5.png" width="250">
 
 ---
 
