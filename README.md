@@ -22,7 +22,7 @@ A framework used to create circular seek bar
 <dependency>
   <groupId>it.fourn.android</groupId>
   <artifactId>circularseekbar</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>pom</type>
 </dependency>
 ```
