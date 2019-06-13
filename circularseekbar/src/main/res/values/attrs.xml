@@ -6,6 +6,7 @@
         <attr name="cs_progressWidth" format="dimension" />
         <attr name="cs_arcWidth" format="dimension" />
         <attr name="cs_indicator_enabled" format="boolean" />
+        <attr name="cs_progress" format="float" />
         <attr name="cs_indicatorRadius" format="dimension" />
         <attr name="cs_arcRadius" format="dimension" />
         <attr name="cs_enabled" format="boolean" />

@@ -2,9 +2,10 @@
 
 ## 0.2
 
-Added the following attr:
+Added the following attrs:
 
 * `cs_indicator_enabled`
+* `cs_progress`
 
 ## 0.1
 

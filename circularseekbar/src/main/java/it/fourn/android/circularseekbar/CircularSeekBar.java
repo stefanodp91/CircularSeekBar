@@ -135,6 +135,8 @@ public class CircularSeekBar extends View {
             indicatorRadius = typedArray.getDimension(R.styleable.CircularSeekBar_cs_indicatorRadius, 0);
             mIndicatorEnabled = typedArray.getBoolean(R.styleable.CircularSeekBar_cs_indicator_enabled, true);
 
+            mPoints = typedArray.getFloat(R.styleable.CircularSeekBar_cs_progress, MIN);
+
             int colorListId = typedArray.getResourceId(R.styleable.CircularSeekBar_cs_color_list, R.array.default_color_list);
             this.colorList = getResources().getIntArray(colorListId);
 
@@ -210,7 +212,7 @@ public class CircularSeekBar extends View {
         mArcRect.set(left, top, left + arcDiameter, top + arcDiameter);
         mProgressRect.set(left, top, left + arcDiameter, top + arcDiameter);
 
-        if(mIndicatorEnabled) {
+        if (mIndicatorEnabled) {
             mIndicatorRect.set(0, 0, 0, 0);
         }
 
@@ -475,6 +477,12 @@ public class CircularSeekBar extends View {
 
     public boolean isTextProgress() {
         return mIsTextProgress;
+    }
+
+    public void setProgress(float progress) {
+        this.mPoints = progress;
+        mProgressSweep = progress / valuePerDegree();
+        invalidate();
     }
 
     public void setOnRoundedSeekChangeListener(OnCircularSeekBarChangeListener onRoundedSeekChangeListener) {

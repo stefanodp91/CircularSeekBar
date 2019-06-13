@@ -16,6 +16,7 @@
         app:cs_text="Text"
         app:cs_text_progress="true"
         app:cs_dynamic_text_color="true"
+        app:cs_progress="84.7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
