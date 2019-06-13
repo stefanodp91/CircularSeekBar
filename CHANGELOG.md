@@ -2,14 +2,17 @@
 
 ## 0.2
 
-Added the following attrs:
+- Added the following attrs:
 
 * `cs_indicator_enabled`
 * `cs_progress`
 
+
+-  androidx migration
+
 ## 0.1
 
-Released the following attrs:
+- Released the following attrs:
 
 *  `app:cs_arcRadius`
 *  `app:cs_step`
@@ -24,4 +27,4 @@ Released the following attrs:
 *  `app:cs_dynamic_text_color`
 *  `app:cs_text_progress`
 
-Designed the progress callback
+- Designed the progress callback
