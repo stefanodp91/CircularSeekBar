@@ -15,20 +15,7 @@ A framework used to create circular seek bar
 
 #### Gradle
 
-` implementation 'it.fourn.android:circularseekbar:0.1'`
-
-#### build.gradle
-
-``` groovy
-allprojects {
-    repositories {
-        ...
-        maven {
-            url 'https://dl.bintray.com/stefanodp91/maven/'
-        }
-    }
-}
-```
+` implementation 'it.fourn.android:circularseekbar:0.2'`
 
 #### Maven
 ```
