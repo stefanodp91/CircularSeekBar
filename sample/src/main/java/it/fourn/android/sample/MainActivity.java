@@ -1,11 +1,11 @@
-package it.fourn.android.app;
+package it.fourn.android.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import it.fourn.android.ciruclarseekbar.CircularSeekBar;
-import it.fourn.android.ciruclarseekbar.OnCircularSeekBarChangeListener;
+import it.fourn.android.circularseekbar.CircularSeekBar;
+import it.fourn.android.circularseekbar.OnCircularSeekBarChangeListener;
 
 public class MainActivity extends AppCompatActivity {
 

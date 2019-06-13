@@ -25,3 +25,24 @@ dependencies {
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.constraintLayout
 }
+
+ext {
+    bintrayRepo = rootProject.ext.bintrayRepo
+    bintrayName = rootProject.ext.libraryName
+    publishedGroupId = rootProject.ext.publishedGroupId
+    libraryName = rootProject.ext.libraryName
+    artifact = rootProject.ext.libraryName
+    libraryDescription = rootProject.ext.libraryDescription
+    siteUrl = rootProject.ext.siteUrl
+    gitUrl = rootProject.ext.gitUrl
+    libraryVersion = rootProject.ext.versionName
+    developerId = rootProject.ext.developerId
+    developerName = rootProject.ext.developerName
+    developerEmail = rootProject.ext.developerEmail
+    licenseName = rootProject.ext.licenseName
+    licenseUrl = rootProject.ext.licenseUrl
+    allLicenses = rootProject.ext.allLicenses
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

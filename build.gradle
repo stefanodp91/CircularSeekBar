@@ -11,6 +11,9 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
@@ -19,6 +22,9 @@ allprojects {
         google()
         jcenter()
 
+        maven {
+            url 'https://dl.bintray.com/stefanodp91/maven/'
+        }
     }
 }
 
@@ -26,14 +32,35 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+// disable javadoc generation for gradle install
+// source : https://android.jlelse.eu/publishing-your-android-kotlin-or-java-library-to-jcenter-from-android-studio-1b24977fe450
+subprojects {
+    tasks.withType(Javadoc).all { enabled = false }
+}
+
 
 ext {
-    applicationId = 'it.fourn.android.circularseekbar'
+    // bintrayUpload
+    bintrayRepo = 'maven'
+    libraryName = 'circularseekbar'
+    publishedGroupId = 'it.fourn.android'
+    libraryDescription = 'An Android library to show a circular seekbar'
+    siteUrl = 'https://github.com/stefanodp91/CircularSeekBar'
+    gitUrl = 'https://github.com/stefanodp91/CircularSeekBar.git'
+    developerId = 'stefanodp91'
+    developerName = 'Stefano De Pascalis'
+    developerEmail = 'stefanodp91dev@gmail.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    // application
+    applicationId = "${publishedGroupId}.circularseekbar"
     compileSdkVersion = 28
     minSdkVersion = 14
     targetSdkVersion = 28
     versionCode = 1
-    versionName = "1.0"
+    versionName = "0.1"
     appcompat = 'com.android.support:appcompat-v7:28.0.0'
     constraintLayout = 'com.android.support.constraint:constraint-layout:1.1.3'
     fileTree = fileTree(dir: 'libs', include: ['*.jar'])

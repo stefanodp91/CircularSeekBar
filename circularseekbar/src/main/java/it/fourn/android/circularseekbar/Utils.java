@@ -1,4 +1,4 @@
-package it.fourn.android.ciruclarseekbar;
+package it.fourn.android.circularseekbar;
 
 import android.content.res.Resources;
 import android.graphics.Color;
