@@ -45,18 +45,18 @@ A framework used to create circular seek bar
 
 ## Customization 
 
-*  `cs_arcRadius`           : The radius of the circle. It is a mandatory field and must be chosen wisely. It must be less than the screen size
-*  `cs_step`                : The increment of the percentual. Default is set to 1
-*  `cs_progressWidth`       : The width of progress
-*  `cs_arcWidth`            : The width of base cicle
-*  `cs_indicatorRadius`     : The radius of the draggable indicator
-*  `cs_enabled`             : Enable or disable the drag
-*  `cs_color_list`          : Integer vector used for gradient generation
-*  `cs_text`                : Text to display to the center of the base cicle
-*  `cs_text_size`           : Text size
-*  `cs_text_color`          : Text static color
-*  `cs_dynamic_text_color`  : Text color changes according to the indicator color
-*  `cs_text_progress`       : Display the current progress as text
+*  `app:cs_arcRadius`           : The radius of the circle. It is a mandatory field and must be chosen wisely. It must be less than the screen size
+*  `app:cs_step`                : The increment of the percentual. Default is set to 1
+*  `app:cs_progressWidth`       : The width of progress
+*  `app:cs_arcWidth`            : The width of base cicle
+*  `app:cs_indicatorRadius`     : The radius of the draggable indicator
+*  `app:cs_enabled`             : Enable or disable the drag
+*  `app:cs_color_list`          : Integer vector used for gradient generation
+*  `app:cs_text`                : Text to display to the center of the base cicle
+*  `app:cs_text_size`           : Text size
+*  `app:cs_text_color`          : Text static color
+*  `app:cs_dynamic_text_color`  : Text color changes according to the indicator color
+*  `app:cs_text_progress`       : Display the current progress as text
 
 
 ---
