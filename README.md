@@ -101,6 +101,7 @@ seekBar.setOnRoundedSeekChangeListener(new OnCircularSeekBarChangeListener() {
 *  `app:cs_progressWidth`       : The width of progress
 *  `app:cs_arcWidth`            : The width of base cicle
 *  `app:cs_indicatorRadius`     : The radius of the draggable indicator
+*  `app:cs_indicator_enabled`   : Show/Hide the indicator
 *  `app:cs_enabled`             : Enable or disable the drag
 *  `app:cs_color_list`          : Integer vector used for gradient generation
 *  `app:cs_text`                : Text to display to the center of the base cicle

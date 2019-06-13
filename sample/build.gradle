@@ -27,7 +27,7 @@ dependencies {
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.constraintLayout
 
-//    implementation project(path: ':circularseekbar')
+    implementation project(path: ':circularseekbar')
 
-    implementation 'it.fourn.android:circularseekbar:0.1'
+//    implementation 'it.fourn.android:circularseekbar:0.1'
 }

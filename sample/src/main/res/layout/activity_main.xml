@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         app:cs_arcRadius="150dp"
         app:cs_color_list="@array/color_list"
+        app:cs_indicator_enabled="false"
         app:cs_text="Text"
         app:cs_text_progress="true"
         app:cs_dynamic_text_color="true"

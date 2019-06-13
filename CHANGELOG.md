@@ -1,4 +1,10 @@
-# CircularSeekBar 
+# CircularSeekBar
+
+## 0.2
+
+Added the following attr:
+
+* `cs_indicator_enabled`
 
 ## 0.1
 

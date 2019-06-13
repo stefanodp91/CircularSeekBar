@@ -76,6 +76,7 @@ public class CircularSeekBar extends View {
     private float indicatorRadius;
     // The Drawable for the seek arc thumbnail
     private Paint mIndicatorPaint;
+    private boolean mIndicatorEnabled;
 
     // text
     private float mTextSize = DEFAULT_TEXT_SIZE;
@@ -128,8 +129,11 @@ public class CircularSeekBar extends View {
             mProgressWidth = typedArray.getDimension(R.styleable.CircularSeekBar_cs_progressWidth, mProgressWidth);
 
             mArcWidth = typedArray.getDimension(R.styleable.CircularSeekBar_cs_arcWidth, mArcWidth);
-            indicatorRadius = typedArray.getDimension(R.styleable.CircularSeekBar_cs_indicatorRadius, 0);
+
             mArcRadius = typedArray.getDimension(R.styleable.CircularSeekBar_cs_arcRadius, 0);
+
+            indicatorRadius = typedArray.getDimension(R.styleable.CircularSeekBar_cs_indicatorRadius, 0);
+            mIndicatorEnabled = typedArray.getBoolean(R.styleable.CircularSeekBar_cs_indicator_enabled, true);
 
             int colorListId = typedArray.getResourceId(R.styleable.CircularSeekBar_cs_color_list, R.array.default_color_list);
             this.colorList = getResources().getIntArray(colorListId);
@@ -167,9 +171,11 @@ public class CircularSeekBar extends View {
         mProgressPaint.setStrokeWidth(mProgressWidth);
 
         // indicator
-        mIndicatorPaint = new Paint();
-        mIndicatorPaint = new Paint();
-        mIndicatorPaint.setAntiAlias(true);
+        if (mIndicatorEnabled) {
+            mIndicatorPaint = new Paint();
+            mIndicatorPaint = new Paint();
+            mIndicatorPaint.setAntiAlias(true);
+        }
 
         // text
         mTextRect = new Rect();
@@ -203,7 +209,10 @@ public class CircularSeekBar extends View {
         float left = width * HALF_DIVIDER - (arcDiameter * HALF_DIVIDER);
         mArcRect.set(left, top, left + arcDiameter, top + arcDiameter);
         mProgressRect.set(left, top, left + arcDiameter, top + arcDiameter);
-        mIndicatorRect.set(0, 0, 0, 0);
+
+        if(mIndicatorEnabled) {
+            mIndicatorRect.set(0, 0, 0, 0);
+        }
 
         updateIndicatorIconPosition();
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -245,24 +254,27 @@ public class CircularSeekBar extends View {
             // retrieve pixel color
             // src: https://stackoverflow.com/questions/13550591/how-to-get-canvas-pixel
             buildDrawingCache();
-            // indicator color
-            Bitmap drownIndicatorBitmap = getDrawingCache(true);
+            // current color
+            Bitmap currentCOlorBitmap = getDrawingCache(true);
             int x = Math.round(mTranslateX - mIndicatorIconX);
             int y = Math.round(mTranslateY - mIndicatorIconY);
-            int pixelColor = drownIndicatorBitmap.getPixel(x, y);
+            int pixelColor = currentCOlorBitmap.getPixel(x, y);
             pixelColor = removeAlpha(pixelColor);
-            mIndicatorPaint.setColor(pixelColor);
-            if (mDynamicTextColor) {
-                mTextPaint.setColor(pixelColor);
-            }
 
             // draw the indicator
-            canvas.translate(mTranslateX - mIndicatorIconX, mTranslateY - mIndicatorIconY);
+            if (mIndicatorEnabled) {
+                mIndicatorPaint.setColor(pixelColor);
+                if (mDynamicTextColor) {
+                    mTextPaint.setColor(pixelColor);
+                }
+                // draw
+                canvas.translate(mTranslateX - mIndicatorIconX, mTranslateY - mIndicatorIconY);
 
-            if (indicatorRadius == 0) {
-                indicatorRadius = mArcRadius * DEFAULT_SIZE_DIVIDER;
+                if (indicatorRadius == 0) {
+                    indicatorRadius = mArcRadius * DEFAULT_SIZE_DIVIDER;
+                }
+                canvas.drawCircle(0, 0, indicatorRadius, mIndicatorPaint);
             }
-            canvas.drawCircle(0, 0, indicatorRadius, mIndicatorPaint);
         }
 
         canvas.restore();
