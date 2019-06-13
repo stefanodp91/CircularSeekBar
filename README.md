@@ -41,6 +41,43 @@ A framework used to create circular seek bar
   ...
 ```
 
+Subscribe to progress changes with OnCircularSeekBarChangeListener:
+
+```java
+  ...
+CircularSeekBar seekBar = findViewById(R.id.seek);
+seekBar.setOnRoundedSeekChangeListener(new OnCircularSeekBarChangeListener() {
+    /**
+     * Progress change
+     * @param CircularSeekBar
+     * @param progress the progress
+     */
+    @Override
+    public void onProgressChange(CircularSeekBar CircularSeekBar, float progress) {
+        Log.d("progress", "" + progress);
+    }
+
+    /**
+     * Indicator touched
+     * @param CircularSeekBar
+     */
+    @Override
+    public void onStartTrackingTouch(CircularSeekBar CircularSeekBar) {
+
+    }
+
+    /**
+     * Indicator released
+     * @param CircularSeekBar
+     */
+    @Override
+    public void onStopTrackingTouch(CircularSeekBar CircularSeekBar) {
+
+    }
+});
+  ...
+```
+
 ---
 
 
