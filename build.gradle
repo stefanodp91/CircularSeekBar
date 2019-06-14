@@ -21,6 +21,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        maven {
+            url 'https://dl.bintray.com/stefanodp91/maven/'
+        }
     }
 }
 

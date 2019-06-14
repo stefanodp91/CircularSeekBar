@@ -8,6 +8,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -27,7 +28,7 @@ dependencies {
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.constraintLayout
 
-    implementation project(path: ':circularseekbar')
+//    implementation project(path: ':circularseekbar')
 
-//    implementation 'it.fourn.android:circularseekbar:0.1'
+    implementation 'com.github.stefanodp91.android:circularseekbar:0.1'
 }
