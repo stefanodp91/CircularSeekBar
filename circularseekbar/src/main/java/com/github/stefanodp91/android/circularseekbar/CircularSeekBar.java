@@ -1,4 +1,4 @@
-package it.fourn.android.circularseekbar;
+package com.github.stefanodp91.android.circularseekbar;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,7 +18,9 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import static it.fourn.android.circularseekbar.Utils.removeAlpha;
+import com.github.stefanodp91.android.R;
+
+import static com.github.stefanodp91.android.circularseekbar.Utils.removeAlpha;
 
 public class CircularSeekBar extends View {
 

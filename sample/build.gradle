@@ -29,5 +29,5 @@ dependencies {
 
     implementation project(path: ':circularseekbar')
 
-//    implementation 'it.fourn.android:circularseekbar:0.2'
+//    implementation 'it.fourn.android:circularseekbar:0.1'
 }

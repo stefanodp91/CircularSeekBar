@@ -1,4 +1,4 @@
-package it.fourn.android.circularseekbar;
+package com.github.stefanodp91.android.circularseekbar;
 
 
 public interface OnCircularSeekBarChangeListener {

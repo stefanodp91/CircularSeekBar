@@ -15,14 +15,27 @@ A framework used to create circular seek bar
 
 #### Gradle
 
-` implementation 'it.fourn.android:circularseekbar:0.2'`
+` implementation 'com.github.stefanodp91.android:circularseekbar:0.1'`
+
+#### build.gradle
+
+``` groovy
+allprojects {
+    repositories {
+        ...
+        maven {
+            url 'https://dl.bintray.com/stefanodp91/maven/'
+        }
+    }
+}
+```
 
 #### Maven
 ```
 <dependency>
-  <groupId>it.fourn.android</groupId>
+  <groupId>com.github.stefanodp91.android</groupId>
   <artifactId>circularseekbar</artifactId>
-  <version>0.2</version>
+  <version>0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -33,7 +46,7 @@ A framework used to create circular seek bar
 
 ```xml
   ...
-  <it.fourn.android.circularseekbar.CircularSeekBar
+  <com.github.stefanodp91.android.circularseekbar.CircularSeekBar
       android:id="@+id/seek"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -88,8 +101,6 @@ seekBar.setOnRoundedSeekChangeListener(new OnCircularSeekBarChangeListener() {
 *  `app:cs_progressWidth`       : The width of progress
 *  `app:cs_arcWidth`            : The width of base cicle
 *  `app:cs_indicatorRadius`     : The radius of the draggable indicator
-*  `app:cs_indicator_enabled`   : Show/Hide the indicator
-*  `app:cs_progress`            : Set the highlighted progress
 *  `app:cs_enabled`             : Enable or disable the drag
 *  `app:cs_color_list`          : Integer vector used for gradient generation
 *  `app:cs_text`                : Text to display to the center of the base cicle
@@ -97,6 +108,8 @@ seekBar.setOnRoundedSeekChangeListener(new OnCircularSeekBarChangeListener() {
 *  `app:cs_text_color`          : Text static color
 *  `app:cs_dynamic_text_color`  : Text color changes according to the indicator color
 *  `app:cs_text_progress`       : Display the current progress as text
+*  `app:cs_indicator_enabled`   : Show/Hide the indicator
+*  `app:cs_progress`            : Set the current progress
 
 ---
 

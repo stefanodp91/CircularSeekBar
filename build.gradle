@@ -39,7 +39,7 @@ ext {
     // bintrayUpload
     bintrayRepo = 'maven'
     libraryName = 'circularseekbar'
-    publishedGroupId = 'it.fourn.android'
+    publishedGroupId = 'com.github.stefanodp91.android'
     libraryDescription = 'An Android library to show a circular seekbar'
     siteUrl = 'https://github.com/stefanodp91/CircularSeekBar'
     gitUrl = 'https://github.com/stefanodp91/CircularSeekBar.git'
@@ -55,8 +55,8 @@ ext {
     compileSdkVersion = 28
     minSdkVersion = 14
     targetSdkVersion = 28
-    versionCode = 2
-    versionName = "0.2"
+    versionCode = 1
+    versionName = "0.1"
     appcompat = 'androidx.appcompat:appcompat:1.0.0'
     constraintLayout = 'androidx.constraintlayout:constraintlayout:1.1.3'
     fileTree = fileTree(dir: 'libs', include: ['*.jar'])
