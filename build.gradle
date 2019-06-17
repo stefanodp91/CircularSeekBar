@@ -22,9 +22,9 @@ allprojects {
         google()
         jcenter()
 
-        maven {
-            url 'https://dl.bintray.com/stefanodp91/maven/'
-        }
+//        maven {
+//            url 'https://dl.bintray.com/stefanodp91/maven/'
+//        }
     }
 }
 
@@ -61,7 +61,10 @@ ext {
     targetSdkVersion = 28
     versionCode = 1
     versionName = "0.1"
+
+    // dependecies
     appcompat = 'androidx.appcompat:appcompat:1.0.0'
     constraintLayout = 'androidx.constraintlayout:constraintlayout:1.1.3'
+    design = 'com.google.android.material:material:1.0.0'
     fileTree = fileTree(dir: 'libs', include: ['*.jar'])
 }

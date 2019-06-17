@@ -28,4 +28,11 @@
 
     <color name="text_color">@color/colorPrimary</color>
 
+    <color name="separator_color">@color/grey_200</color>
+
+    <integer-array name="settings_color_list_unselected">
+        <item>@color/grey_500</item>
+        <item>@color/grey_500</item>
+    </integer-array>
+
 </resources>

@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme.Toolbar.Overlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.Toolbar.PopupOverlay" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- enabled-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Enabled"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toStartOf="@+id/enabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/enabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/enabled_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/enabled_label"
+                app:layout_constraintTop_toTopOf="@id/enabled_label"
+                tools:checked="true" />
+
+            <View
+                android:id="@+id/enabled_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enabled_label" />
+
+            <!-- color list-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/color_list_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Color list"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toStartOf="@id/color_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enabled_separator" />
+
+            <com.github.stefanodp91.android.circularseekbar.CircularSeekBar
+                android:id="@+id/color_list"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cs_arcRadius="12dp"
+                app:cs_arcWidth="1dp"
+                app:cs_color_list="@array/settings_color_list_unselected"
+                app:cs_enabled="false"
+                app:cs_indicator_enabled="false"
+                app:cs_progress="100"
+                app:cs_progressWidth="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/color_list_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/color_list_label"
+                app:layout_constraintTop_toTopOf="@+id/color_list_label" />
+
+            <View
+                android:id="@+id/color_list_clickable_overlay"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/color_list"
+                app:layout_constraintEnd_toEndOf="@id/color_list"
+                app:layout_constraintStart_toStartOf="@id/color_list"
+                app:layout_constraintTop_toTopOf="@+id/color_list" />
+
+            <View
+                android:id="@+id/color_list_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/color_list_label" />
+
+            <!--step-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/steps_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Steps"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@id/steps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/color_list_separator" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/steps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="10"
+                android:min="1"
+                app:layout_constraintEnd_toStartOf="@+id/steps_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/steps_label"
+                tools:text="1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/steps_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/steps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/steps"
+                app:layout_constraintTop_toTopOf="@+id/steps"
+                tools:text="1" />
+
+            <View
+                android:id="@+id/step_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/steps_value" />
+
+            <!--arc width-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/arc_width_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Arc width"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/step_separator" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/arc_width"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:min="1"
+                app:layout_constraintEnd_toStartOf="@id/arc_width_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arc_width_label"
+                tools:progress="40" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/arc_width_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/arc_width"
+                app:layout_constraintEnd_toStartOf="@+id/arc_width_size"
+                app:layout_constraintStart_toEndOf="@id/arc_width"
+                app:layout_constraintTop_toTopOf="@+id/arc_width"
+                tools:text="40" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/arc_width_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/arc_width_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/arc_width_value"
+                app:layout_constraintTop_toTopOf="@+id/arc_width_value" />
+
+            <View
+                android:id="@+id/arc_width_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arc_width_value" />
+
+            <!--progress-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Progress"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arc_width_separator" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:min="1"
+                app:layout_constraintEnd_toStartOf="@id/progress_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_label"
+                tools:progress="20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/progress"
+                app:layout_constraintEnd_toStartOf="@+id/progress_size"
+                app:layout_constraintStart_toEndOf="@id/progress"
+                app:layout_constraintTop_toBottomOf="@+id/progress_label"
+                tools:text="20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@id/progress_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/progress_value"
+                app:layout_constraintTop_toTopOf="@+id/progress_value" />
+
+            <!--progress width-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_width_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Progress width"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_value" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/progress_width"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:min="1"
+                app:layout_constraintEnd_toStartOf="@id/progress_width_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_width_label"
+                tools:progress="30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_width_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_width"
+                app:layout_constraintEnd_toStartOf="@+id/progress_width_size"
+                app:layout_constraintStart_toEndOf="@id/progress_width"
+                app:layout_constraintTop_toTopOf="@+id/progress_width"
+                tools:text="30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_width_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_width_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/progress_width_value"
+                app:layout_constraintTop_toTopOf="@+id/progress_width_value" />
+
+            <View
+                android:id="@+id/progress_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_width" />
+
+            <!--indicator enabled-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/indicator_enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Indicator enabled"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toStartOf="@+id/indicator_enabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_separator" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/indicator_enabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/indicator_enabled_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/indicator_enabled_label"
+                app:layout_constraintTop_toBottomOf="@+id/arc_width"
+                app:layout_constraintTop_toTopOf="@id/indicator_enabled_label"
+                tools:checked="true" />
+
+            <!--indicator radius-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/indicator_radius_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Indicator radius"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicator_enabled_label" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/indicator_radius"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="200"
+                android:min="0"
+                app:layout_constraintEnd_toStartOf="@id/indicator_radius_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicator_radius_label"
+                tools:progress="90" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/indicator_radius_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/indicator_radius"
+                app:layout_constraintEnd_toStartOf="@+id/indicator_radius_size"
+                app:layout_constraintStart_toEndOf="@id/indicator_radius"
+                app:layout_constraintTop_toTopOf="@+id/indicator_radius"
+                tools:text="90" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/indicator_radius_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/indicator_radius_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/indicator_radius_value"
+                app:layout_constraintTop_toTopOf="@+id/indicator_radius_value" />
+
+            <View
+                android:id="@+id/indicator_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/separator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicator_radius_value" />
+
+            <!-- text progress-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_progress_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Text progress"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toStartOf="@+id/text_progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicator_separator" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/text_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/text_progress_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text_progress_label"
+                app:layout_constraintTop_toTopOf="@id/text_progress_label"
+                tools:checked="false" />
+
+            <!-- text -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_progress_label" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/text_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="enter a text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_label" />
+
+            <!--text size-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_size_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Text size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_value" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/text_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="300"
+                android:min="20"
+                app:layout_constraintEnd_toStartOf="@id/text_size_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_size_label"
+                tools:progress="30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_size_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/text_size"
+                app:layout_constraintEnd_toStartOf="@+id/text_size_width"
+                app:layout_constraintStart_toEndOf="@id/text_size"
+                app:layout_constraintTop_toTopOf="@+id/text_size"
+                tools:text="30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_size_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="px"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toBottomOf="@+id/text_size_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text_size_value"
+                app:layout_constraintTop_toTopOf="@+id/text_size_value" />
+
+            <!--text color-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_color_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Text color"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toStartOf="@id/text_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_size" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/text_color"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_color_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text_color_label"
+                app:layout_constraintTop_toTopOf="@+id/text_color_label"
+                tools:background="@color/red_500" />
+
+            <!-- dynamic text color-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dynamic_text_color_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Dynamic text color"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/text_separator"
+                app:layout_constraintEnd_toStartOf="@+id/dynamic_text_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_color_label" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/dynamic_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/dynamic_text_color_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dynamic_text_color_label"
+                app:layout_constraintTop_toTopOf="@id/dynamic_text_color_label"
+                tools:checked="true" />
+
+            <View
+                android:id="@+id/text_separator"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="100dp"
+                android:background="@color/separator_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dynamic_text_color_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <!--save-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_save_white_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

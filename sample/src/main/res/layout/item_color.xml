@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/color"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/light_green_a_100" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/selected"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_done"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_done_white_24dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/text_background"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/transparent_black"
+        app:layout_constraintBottom_toBottomOf="@+id/color"
+        app:layout_constraintEnd_toEndOf="@+id/color"
+        app:layout_constraintStart_toStartOf="@+id/color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_background"
+        app:layout_constraintEnd_toEndOf="@+id/text_background"
+        app:layout_constraintStart_toStartOf="@+id/text_background"
+        app:layout_constraintTop_toTopOf="@+id/text_background"
+        tools:text="light_green_a_100" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

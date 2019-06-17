@@ -27,8 +27,9 @@ dependencies {
     implementation rootProject.ext.fileTree
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.constraintLayout
+    implementation rootProject.ext.design
 
-//    implementation project(path: ':circularseekbar')
+    implementation project(path: ':circularseekbar')
 
-    implementation 'com.github.stefanodp91.android:circularseekbar:0.1'
+//    implementation 'com.github.stefanodp91.android:circularseekbar:0.1'
 }

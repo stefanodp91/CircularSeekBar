@@ -6,20 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.Toolbar.Overlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.Toolbar.PopupOverlay" />
+
     <com.github.stefanodp91.android.circularseekbar.CircularSeekBar
         android:id="@+id/seek"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:cs_arcRadius="150dp"
         app:cs_color_list="@array/color_list"
         app:cs_dynamic_text_color="true"
         app:cs_indicator_enabled="false"
-        app:cs_progress="84.7"
+        app:cs_progress="84"
         app:cs_text="Text"
         app:cs_text_progress="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
