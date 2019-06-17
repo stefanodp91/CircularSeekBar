@@ -31,5 +31,5 @@ dependencies {
 
     implementation project(path: ':circularseekbar')
 
-//    implementation 'com.github.stefanodp91.android:circularseekbar:0.1'
+//    implementation 'com.github.stefanodp91.android:circularseekbar:0.2'
 }
