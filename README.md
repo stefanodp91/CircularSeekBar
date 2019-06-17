@@ -15,27 +15,14 @@ A framework used to create circular seek bar
 
 #### Gradle
 
-` implementation 'com.github.stefanodp91.android:circularseekbar:0.1'`
-
-#### build.gradle
-
-``` groovy
-allprojects {
-    repositories {
-        ...
-        maven {
-            url 'https://dl.bintray.com/stefanodp91/maven/'
-        }
-    }
-}
-```
+` implementation 'com.github.stefanodp91.android:circularseekbar:0.2'`
 
 #### Maven
 ```
 <dependency>
   <groupId>com.github.stefanodp91.android</groupId>
   <artifactId>circularseekbar</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <type>pom</type>
 </dependency>
 ```
