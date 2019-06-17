@@ -10,13 +10,14 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.os.Build;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.github.stefanodp91.android.R;
 
@@ -175,11 +176,9 @@ public class CircularSeekBar extends View {
         mProgressPaint.setStrokeWidth(mProgressWidth);
 
         // indicator
-        if (mIndicatorEnabled) {
-            mIndicatorPaint = new Paint();
-            mIndicatorPaint = new Paint();
-            mIndicatorPaint.setAntiAlias(true);
-        }
+        mIndicatorPaint = new Paint();
+        mIndicatorPaint = new Paint();
+        mIndicatorPaint.setAntiAlias(true);
 
         // text
         mTextRect = new Rect();
@@ -214,9 +213,7 @@ public class CircularSeekBar extends View {
         mArcRect.set(left, top, left + arcDiameter, top + arcDiameter);
         mProgressRect.set(left, top, left + arcDiameter, top + arcDiameter);
 
-        if (mIndicatorEnabled) {
-            mIndicatorRect.set(0, 0, 0, 0);
-        }
+        mIndicatorRect.set(0, 0, 0, 0);
 
         updateIndicatorIconPosition();
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -440,9 +437,17 @@ public class CircularSeekBar extends View {
         mProgressPaint.setStrokeWidth(mProgressWidth);
     }
 
+    public float getProgressWidth() {
+        return mProgressWidth;
+    }
+
     public void setArcWidth(float mArcWidth) {
         this.mArcWidth = mArcWidth;
         mArcPaint.setStrokeWidth(mArcWidth);
+    }
+
+    public float getArcWidth() {
+        return mArcWidth;
     }
 
     public boolean isEnabled() {
@@ -457,6 +462,10 @@ public class CircularSeekBar extends View {
         mStep = step;
     }
 
+    public float getStep() {
+        return mStep;
+    }
+
     public void setArcDiameter(float arcDiameter) {
         this.arcDiameter = arcDiameter;
         invalidate();
@@ -467,23 +476,83 @@ public class CircularSeekBar extends View {
         invalidate();
     }
 
+    @ColorInt
+    public int getTextColor() {
+        return mTextPaint.getColor();
+    }
+
     public void setTextSize(float textSize) {
         mTextSize = textSize;
         mTextPaint.setTextSize(mTextSize);
         invalidate();
     }
 
+    public float getTextSize() {
+        return mTextSize;
+    }
+
     public void setText(String text) {
         this.mText = text;
+        invalidate();
     }
 
     public boolean isTextProgress() {
         return mIsTextProgress;
     }
 
+    public void setIsTextProgress(boolean isTextProgress) {
+        this.mIsTextProgress = isTextProgress;
+        invalidate();
+    }
+
     public void setProgress(float progress) {
         this.mPoints = progress;
         mProgressSweep = progress / valuePerDegree();
+        invalidate();
+    }
+
+    public float getProgress() {
+        return mPoints;
+    }
+
+    public void setIndicatorEnabled(boolean enabled) {
+        this.mIndicatorEnabled = enabled;
+        invalidate();
+    }
+
+    public boolean isIndicatorEnabled() {
+        return mIndicatorEnabled;
+    }
+
+    public void setIndicatorRadius(float indicatorRadius) {
+        this.indicatorRadius = indicatorRadius;
+        invalidate();
+    }
+
+    public float getIndicatorRadius() {
+        return indicatorRadius;
+    }
+
+    public void setColorList(@ColorInt int[] colorList) {
+        this.colorList = colorList;
+        invalidate();
+    }
+
+    @ColorInt
+    public int[] getColorList() {
+        return colorList;
+    }
+
+    public String getText() {
+        return mText;
+    }
+
+    public boolean isDynamicTextColor() {
+        return mDynamicTextColor;
+    }
+
+    public void setDynamicTextColor(boolean enabled) {
+        this.mDynamicTextColor = enabled;
         invalidate();
     }
 
